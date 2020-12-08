@@ -1,0 +1,58 @@
+<div class="row my-4">
+  <div class="col-12">
+    <button class="btn btn-outline-success btn-lg" type="button" (click)="volverUrl()">
+     Volver <i class="fas fa-arrow-circle-left"></i>
+    </button>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID Local</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Nombre Local</th>
+        <th scope="col">Comuna</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Hora Apertura</th>
+        <th scope="col">Hora Cierre</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Dia de Funcionamiento</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{_farmaciaService.farmaciaSelect.local_id}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.fecha}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.local_nombre}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.comuna_nombre}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.local_direccion}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.funcionamiento_hora_apertura}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.funcionamiento_hora_cierre}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.local_telefono}}</td>
+        <td>{{_farmaciaService.farmaciaSelect.funcionamiento_dia}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<iframe width="100%" height="450" frameborder="0" style="border:0" [src]="urlConfiable" allowfullscreen></iframe>
+
+<!-- <pre>{{_farmaciaService.farmaciaSelect | json}}</pre> -->
+<!-- DESCRIPCION DE FARMACIA -->
+<!-- "fecha": "08-12-2020",
+"local_id": "534",
+"local_nombre": "TORRES MPD",
+"comuna_nombre": "RECOLETA",
+"localidad_nombre": "RECOLETA",
+"local_direccion": "AVENIDA EL SALTO 2972",
+"funcionamiento_hora_apertura": "10:30 hrs.",
+"funcionamiento_hora_cierre": "19:30 hrs.",
+"local_telefono": "+560225053570",
+"local_lat": "-33.3996351",
+"local_lng": "-70.62894990000001",
+"funcionamiento_dia": "martes",
+"fk_region": "7",
+"fk_comuna": "122" -->

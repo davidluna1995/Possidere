@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    <p class="fw-bold">Filtrador</p>
+  </div>
+  <div class="card-body">
+    <form #f="ngForm" (submit)="filtrar(f)">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Comuna</label>
+          <select class="form-select" ngModel name="comunaNombre">
+            <option value="">--TODAS LAS COMUNAS--</option>
+            <option *ngFor="let itemComuna of comunas" [value]="itemComuna">{{itemComuna}}</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label>Hora Inicio</label>
+          <input type="time" ngModel name="horaInicio" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label>Hora Cierre</label>
+          <input type="time" ngModel name="horaCierre" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label>Acción</label>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Filtrar <i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="mt-4">
+  <app-resultados-buscador [farmaciasFilter]="filterFarmaciasArreglo"></app-resultados-buscador>
+</div>

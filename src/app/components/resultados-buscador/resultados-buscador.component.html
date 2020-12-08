@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Farmacia</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Hora Inicio</th>
+        <th scope="col">Hora Cierre</th>
+        <th scope="col">Detalles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let itemFarmacia of farmaciasFilter | paginate: { itemsPerPage: 5, currentPage: p }">
+        <td>{{itemFarmacia.local_nombre}}</td>
+        <td>{{itemFarmacia.comuna_nombre +', ' + itemFarmacia.local_direccion}}</td>
+        <td>{{itemFarmacia.local_telefono}}</td>
+        <td>{{itemFarmacia.funcionamiento_hora_apertura}}</td>
+        <td>{{itemFarmacia.funcionamiento_hora_cierre}}</td>
+        <td>
+          <button class="btn btn-outline-primary" (click)="visualizarDatos(itemFarmacia)">Ver Datos <i class="fas fa-table"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="text-center">
+  <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente" [autoHide]="true" [maxSize]="4"></pagination-controls>
+</div>
+
