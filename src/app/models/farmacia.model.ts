@@ -1,3 +1,4 @@
+// Modelo de farmacia creado en base las respuestas que entrega la api
 export class Farmacia{
     constructor(
         public comuna_nombre: string,

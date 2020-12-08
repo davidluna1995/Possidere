@@ -12,6 +12,7 @@ export class FarmaciasService {
   constructor(private _http: HttpClient) { }
 
   getFarmacias(): Observable<any>{
+    // Ruta pasada por allorigins ya que se encontraba protegida CORS
     const url = `https://api.allorigins.win/get?url=https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion?id_region=7`;
 
     return this._http.get(url);

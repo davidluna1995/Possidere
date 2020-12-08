@@ -21,6 +21,7 @@ export class ResultadosBuscadorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Funcion que llama el usuario al momento de querer ver el detalle de una farmacia, guarda el objeto de una farmacia en el servicio para ser accedido en la nueva ruta/componente
   visualizarDatos(farmacia: Farmacia){
     this._farmaciasService.farmaciaSelect = farmacia;
     localStorage.setItem('farmacia', JSON.stringify(farmacia));

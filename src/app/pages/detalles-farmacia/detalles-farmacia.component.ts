@@ -19,9 +19,11 @@ export class DetallesFarmaciaComponent implements OnInit {
               private sanatizer: DomSanitizer,
               router: Router) {
 
+    //En caso de recargar la pagina vuelve a home 
     if(!_farmaciaService.farmaciaSelect){
       router.navigate(['']);
     }
+    // Limpieza de url para no generar error de seguridad al pasar paremtros al src del iframe
     this.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyAtNl374R6YyIBt652giFWgMexjENUf6ic&q=
                 ${_farmaciaService.farmaciaSelect.local_lat},
                 ${_farmaciaService.farmaciaSelect.local_lng}`;
